@@ -6,7 +6,7 @@ import Animated, {
   useAnimatedStyle,
   withTiming,
 } from "react-native-reanimated";
-import { useTheme } from "../ThemeContext";
+import { useTheme } from "../assets/ThemeContext";
 
 export default function SplashScreen({ navigation }) {
   const { theme } = useTheme();

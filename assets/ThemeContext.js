@@ -20,6 +20,8 @@ export const ThemeProvider = ({ children }) => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
+  const isDarkMode = theme === 'dark';
+
   useEffect(() => {
     if (Platform.OS === 'web') {
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -41,7 +43,7 @@ export const ThemeProvider = ({ children }) => {
   }, []);
 
   return (
-    <ThemeContext.Provider value={{ theme: semanticColors[theme], toggleTheme }}>
+    <ThemeContext.Provider value={{ theme: semanticColors[theme], toggleTheme, isDarkMode }}>
       {children}
     </ThemeContext.Provider>
   );

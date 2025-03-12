@@ -1,9 +1,12 @@
-import {primitiveColors} from "./primitiveTokens";
-import { Dimensions, Platform } from 'react-native';
-const { width } = Dimensions.get('window');
+import { primitiveColors } from "./primitiveTokens";
+import { Dimensions, Platform } from "react-native";
+const { width } = Dimensions.get("window");
 
 const semanticColors = {
   light: {
+    logo:{
+      source:"../assets/logoMonte.png"
+    },
     icon: {
       neutral: {
         primary: primitiveColors.neutral[800],
@@ -41,6 +44,9 @@ const semanticColors = {
         primaryVariant: primitiveColors.neutral[300],
         tertiaryVariant: primitiveColors.neutral[600],
         secondary: primitiveColors.neutral[100],
+      },
+      background: {
+        default: primitiveColors.brown[100],
       },
       special: {
         overlay: primitiveColors.overlay[100],
@@ -102,6 +108,9 @@ const semanticColors = {
     },
   },
   dark: {
+    logo:{
+      source:'../assets/logoMonteW.png'
+    },
     icon: {
       neutral: {
         primary: primitiveColors.neutral[200],
@@ -138,6 +147,9 @@ const semanticColors = {
         primaryVariant: primitiveColors.neutral[700],
         tertiaryVariant: primitiveColors.neutral[600],
         secondary: primitiveColors.neutral[975],
+      },
+      background: {
+        default: primitiveColors.neutral[950],
       },
       special: {
         overlay: primitiveColors.overlay[100],
@@ -200,5 +212,4 @@ const semanticColors = {
   },
 };
 
-
-export {semanticColors}
+export { semanticColors };

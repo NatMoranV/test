@@ -80,9 +80,8 @@ const primitiveFontValues = {
   
   family: {
     interRegular: 'Inter_400Regular',
-    interSemiBold: 'Inter_600Semibold',
+    interSemiBold: 'Inter_600SemiBold',
     interBold: 'Inter_700Bold',
-    materialIcons: "Material Symbols Rounded",
   },
 
   size: {
