@@ -3,13 +3,9 @@ import { View, Image, ScrollView, Dimensions } from "react-native";
 
 const { width } = Dimensions.get("window");
 
-const images = [
-  require("../assets/onboarding/image1.png"),
-  require("../assets/onboarding/image2.png"),
-  require("../assets/onboarding/image3.png"),
-];
 
-const SwipeableCarousel = ({ activeIndex, scrollViewRef, onScroll }) => {
+
+const SwipeableCarousel = ({ activeIndex, scrollViewRef, onScroll, images }) => {
   return (
     <View style={{ alignItems: "center", marginTop: 20 }}>
       <ScrollView
@@ -19,7 +15,7 @@ const SwipeableCarousel = ({ activeIndex, scrollViewRef, onScroll }) => {
         showsHorizontalScrollIndicator={false}
         onScroll={onScroll}
         scrollEventThrottle={16}
-        style={{ width }} // Asegurar que el ScrollView ocupe toda la pantalla
+        style={{ width }}
         contentContainerStyle={{ width: width * images.length }}
       >
         {images.map((image, index) => (

@@ -70,7 +70,9 @@ const primitiveColors = {
     900: "#3D292C",
     950: "#382E2F",
   },
-  overlay: "rgba(0, 0, 0, 0.50)",
+  overlay: {light:"rgba(0, 0, 0, 0.50)",
+    dark: 'rgba(0,0,0,0.75)'
+  },
 };
 
 

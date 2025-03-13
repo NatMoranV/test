@@ -1,18 +1,15 @@
-import { View, Text, TextInput, Button, StyleSheet, Image, Alert } from "react-native";
+import { View, Text, StyleSheet, Image, } from "react-native";
 import getSemanticTextStyles from "../assets/semanticTextStyles";
 import CDSButton from "../components/CDSButton";
 import CDSInput from "../components/CDSInput";
 import { useTheme } from "../assets/ThemeContext";
 import CDSSwitch from "../components/CDSSwitch";
 import {CDSOnboarding} from "../components/CDSOnboarding";
-import { useState } from "react";
-import CDSBottomSheet from "../components/CDSBottomSheet";
 
 
 export default function LoginScreen() {
   const { theme, isDarkMode } = useTheme();
   const textStyles = getSemanticTextStyles(theme);
-  const [showOnboarding, setShowOnboarding] = useState(true);
 
   return (
     <View
@@ -78,12 +75,12 @@ export default function LoginScreen() {
       />
       <View style={styles.footer}>
         <View style={styles.helpContainer}>
-          <Text style={textStyles.sm}>Teléfonos de atención:</Text>
+          <Text style={textStyles.regular.sm}>Teléfonos de atención:</Text>
           <CDSButton type="link" size="small" label={"55 2629 2790 "} />
-          <Text style={textStyles.sm}>y</Text>
+          <Text style={textStyles.regular.sm}>y</Text>
           <CDSButton type="link" size="small" label={"55 8890 9717 "} />
         </View>
-        <Text style={textStyles.xs}>Versión 11.8.0</Text>
+        <Text style={textStyles.regular.xs}>Versión 11.8.0</Text>
       </View>
       <CDSOnboarding />
     </View>

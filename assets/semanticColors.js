@@ -49,7 +49,7 @@ const semanticColors = {
         default: primitiveColors.brown[100],
       },
       special: {
-        overlay: primitiveColors.overlay[100],
+        overlay: primitiveColors.overlay.light,
         scroll: primitiveColors.neutral[400],
         tooltip: primitiveColors.neutral[500],
         progress: primitiveColors.brand[600],
@@ -152,7 +152,7 @@ const semanticColors = {
         default: primitiveColors.neutral[950],
       },
       special: {
-        overlay: primitiveColors.overlay[100],
+        overlay: primitiveColors.overlay.dark,
         scroll: primitiveColors.neutral[400],
         tooltip: primitiveColors.neutral[500],
         progress: primitiveColors.brand[600],

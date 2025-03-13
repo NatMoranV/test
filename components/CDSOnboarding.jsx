@@ -2,29 +2,33 @@ import React, { act, useRef, useState } from "react";
 import { Dimensions } from "react-native";
 import CDSBottomSheet from "./CDSBottomSheet";
 import CDSCarousel from "./CDSCarousel";
-
-
+import { useTheme } from "../assets/ThemeContext";
 
 const { width } = Dimensions.get("window");
 
-const images = [
-  "../assets/onboarding/image1.png",
-  "../assets/onboarding/image2.png",
-  "../assets/onboarding/image3.png",
-];
-
 export const CDSOnboarding = () => {
+  const { isDarkMode } = useTheme();
   const scrollViewRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isLastSlide, setIsLastSlide] = useState(false);
+
+  const images = !isDarkMode
+    ? [
+        require("../assets/onboarding/image1.png"),
+        require("../assets/onboarding/image2.png"),
+        require("../assets/onboarding/image3.png"),
+      ]
+    : [
+        require("../assets/onboarding/image1D.png"),
+        require("../assets/onboarding/image2D.png"),
+        require("../assets/onboarding/image3D.png"),
+      ];
 
   const handleScroll = (event) => {
     const index = Math.round(event.nativeEvent.contentOffset.x / width);
     setActiveIndex(index);
     setIsLastSlide(index === images.length - 1);
   };
-
-  console.log(activeIndex);
 
   const handleNext = () =>
     !isLastSlide &&
@@ -41,6 +45,7 @@ export const CDSOnboarding = () => {
           activeIndex={activeIndex}
           scrollViewRef={scrollViewRef}
           onScroll={handleScroll}
+          images={images}
         />
       }
       title={

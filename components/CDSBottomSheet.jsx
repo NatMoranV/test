@@ -51,6 +51,7 @@ const CDSBottomSheet = ({
           flex: 1,
           justifyContent: "center",
           alignItems: "center",
+          backgroundColor: theme.surface.special.overlay
         },
       ]}
       onPress={() => setModalVisible(!modalVisible)}
@@ -62,7 +63,7 @@ const CDSBottomSheet = ({
         ]}
       >
         <View style={styles.centeredView}>
-          <View style={styles.modalView}>
+          <View style={[styles.modalView, {backgroundColor: theme.surface.neutral.primary}]}>
             {hasClose && (
               <MaterialIcons
                 name={"close"}
@@ -107,7 +108,6 @@ const styles = StyleSheet.create({
     left: 0,
     width: "110%",
     height: "104.4%",
-    backgroundColor: "rgba(0,0,0,0.3)", // Fondo oscuro semi-transparente
     zIndex: 100,
   },
 
@@ -131,15 +131,6 @@ const styles = StyleSheet.create({
     gap: 8,
   },
 
-  textStyle: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: "center",
-  },
 });
 
 export default CDSBottomSheet;
