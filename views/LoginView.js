@@ -1,14 +1,14 @@
 import { View, Text, StyleSheet, Image, } from "react-native";
-import getSemanticTextStyles from "../assets/semanticTextStyles";
-import CDSButton from "../components/CDSButton";
-import CDSInput from "../components/CDSInput";
-import { useTheme } from "../assets/ThemeContext";
-import CDSSwitch from "../components/CDSSwitch";
-import {CDSOnboarding} from "../components/CDSOnboarding";
+
+import {getSemanticTextStyles, CDSButton, CDSInput, useTheme, CDSSwitch} from "cds-library-test";
+import { CDSOnboarding } from "../components/CDSOnboarding";
 
 
 export default function LoginScreen() {
   const { theme, isDarkMode } = useTheme();
+ 
+
+  
   const textStyles = getSemanticTextStyles(theme);
 
   return (
@@ -82,7 +82,7 @@ export default function LoginScreen() {
         </View>
         <Text style={textStyles.regular.xs}>Versión 11.8.0</Text>
       </View>
-      <CDSOnboarding />
+      {/* <CDSOnboarding /> */}
     </View>
   );
 }

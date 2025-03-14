@@ -6,7 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import "react-native-reanimated";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { ThemeProvider, useTheme } from "./assets/ThemeContext";
+import  {ThemeProvider, useTheme } from "cds-library-test";
 import {
   useFonts,
   Inter_400Regular,
@@ -17,7 +17,9 @@ import SplashView from "./views/SplashView";
 import LoginView from "./views/LoginView";
 const Stack = createStackNavigator();
 
+
 const AppContent = () => {
+
   const { theme } = useTheme();
   let [fontsLoaded] = useFonts({
     Inter_400Regular,
@@ -29,6 +31,9 @@ const AppContent = () => {
     return null;
   }
 
+
+
+
   return (
     <NavigationContainer theme={{ colors: { background: theme.surface.background.default } }}>
       <Stack.Navigator
@@ -36,14 +41,14 @@ const AppContent = () => {
           headerShown: false,
         }}
       >
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Splash"
           component={SplashView}
           options={{
             cardStyleInterpolator:
               CardStyleInterpolators.forFadeFromBottomAndroid,
           }}
-        />
+        /> */}
         <Stack.Screen
           name="Login"
           component={LoginView}

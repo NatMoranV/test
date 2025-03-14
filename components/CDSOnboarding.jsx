@@ -1,9 +1,8 @@
-import React, { act, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Dimensions } from "react-native";
-import CDSBottomSheet from "./CDSBottomSheet";
-import CDSCarousel from "./CDSCarousel";
-import { useTheme } from "../assets/ThemeContext";
 
+
+import { CDSBottomSheet, CDSCarousel, useTheme } from "cds-library-test";
 const { width } = Dimensions.get("window");
 
 export const CDSOnboarding = () => {
